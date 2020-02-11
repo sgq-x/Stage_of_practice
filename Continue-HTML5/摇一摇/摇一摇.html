@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>摇一摇</title>
+</head>
+<body>
+  <script>
+    // 定义一个最低速度
+    var SHAKE_THRESHOLD = 800
+    // 上次执行的时间
+    var last_update = 0
+    // 记录坐标
+    var x,
+    y,
+    z,
+    last_x = 0,
+    last_y = 0,
+    last_z = 0
+
+    function deviceMotionHeader(eventData) {
+      // 存重力加速度,包括重心引力,x,y,z轴上的方向
+      var acceleration = eventData.accelerationIncludingGravity
+      // 存时间,用来比较两次调用的时间差
+      var curTime = new Date().getTime()
+    }
+  </script>
+</body>
+</html>
