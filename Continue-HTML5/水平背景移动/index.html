@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>背景移动</title>
+</head>
+<body onload="draw()">
+  <canvas id="canvas" width="340" height="191"></canvas>
+
+  <script>
+    function draw() {
+      var canvas = document.getElementById('canvas')
+
+      if(canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+        var x =0
+        // 水平背景移动
+        function backgroundMove() {
+          // 记录状态
+          ctx.save()
+          ctx.clearRect(0,0,canvas.width,canvas.height)
+          ctx.translate(-x,0)
+          ctx.drawImage(bgImage,0,0)
+          ctx.drawImage(bgImage,canvas.width,0)
+          x++
+          // 判断x的偏移量
+          
+          if(x>=canvas.width) {
+            x = 0
+          }
+          ctx.restore()
+          window.requestAnimationFrame(backgroundMove)
+        }
+
+        var bgImage = new Image()
+        bgImage.onload = function() {
+          backgroundMove()
+        }
+        bgImage.src = 'link.jpg'
+      }
+    }
+  </script>
+</body>
+</html>

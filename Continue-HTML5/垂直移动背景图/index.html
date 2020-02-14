@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body onload="draw()">
+  <canvas id="canvas" width="320" height="568"></canvas>
+  <script>
+    function draw() {
+      var canvas = document.getElementById('canvas')
+
+      if(canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+
+        var y = 0
+        function bgMove() {
+          ctx.save()
+          ctx.clearRect(0,0,canvas.width,canvas.height)
+          ctx.translate(0,y)
+          ctx.drawImage(bgImage,0,0)
+          ctx.drawImage(bgImage,0,canvas.height*-1)
+          y++
+          if(y >= canvas.height) {
+            y = 0
+          }
+
+          ctx.restore()
+          window.requestAnimationFrame(bgMove)
+        }
+
+        var bgImage = new Image()
+        bgImage.onload = function() {
+          bgMove()
+        }
+
+        bgImage.src = 'bg.jpg'
+      }
+    }
+  </script>
+</body>
+</html>

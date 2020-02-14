@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>save和restore</title>
+  <style>
+    #canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body onload="draw()">
+  <canvas id="canvas" width="800" height="800"></canvas>
+  <script>
+    function draw() {
+      var canvas = document.getElementById('canvas')
+
+      if(canvas.getContext) {
+        var ctx = canvas.getContext('2d')
+
+        ctx.beginPath()
+        ctx.fillStyle = 'blue'
+        ctx.save()
+        ctx.fillRect(50,50,150,150)
+        ctx.closePath()
+
+        ctx.beginPath()
+        ctx.fillStyle = 'red'
+        ctx.save()
+        ctx.fillRect(100,300,150,150)
+        ctx.closePath()
+
+        ctx.beginPath()
+        ctx.restore()
+        ctx.fillRect(350,100,150,150)
+
+        // 栈的存储方式
+      }
+    }
+  </script>
+</body>
+</html>
