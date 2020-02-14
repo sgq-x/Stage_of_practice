@@ -5,33 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .content,
-    .cover {
-      width: 400px;
-      height: 400px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin: -200px 0 0 -200px;
-    }
-    .content {
-      font-size: 48px;
-      line-height: 200px;
-      text-align: center;
-      color: red;
-    }
-    h3 {
-      text-align: center;
-      line-height: 200px;
-      color: deepskyblue;
+    canvas{
+      border: 1px solid #000;
     }
   </style>
 </head>
 <body>
-  <h3>刮刮乐</h3>
-  <div class="content">蚂蚁会员vip</div>
   <!-- 创建一个画布 -->
-  <canvas class="cover" id="cover" width="400" height="400"></canvas>
+  <canvas class="cover" id="myCanvas" width="300" height="300"></canvas>
   <script src="./index.js"></script>
 </body>
 </html>
