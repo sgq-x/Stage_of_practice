@@ -45,6 +45,7 @@ function draw() {
     // 列宽x 位置
     var x = i * fontSize
     // y的位置
+    // console.log(drops[i])
     var y = drops[i] * fontSize
     // 内容绘制的x y
     context.fillText(str[index],x,y)
