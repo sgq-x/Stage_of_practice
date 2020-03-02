@@ -46,8 +46,27 @@
           var index = getIndex(this)
           console.log('开始')
           console.log(e.target.innerText)
+          // console.log(e)
+          e.dataTransfer.setData('data',e.target.innerText)
+        }
+        oLi[i].addEventListener('dragover',function(e) {
+          e.preventDefault()
+        })
+        oLi[i].addEventListener('drop',function(e) {
+          var i = e.dataTransfer.getData('data')
+          console.log(i)
 
-          // e.data.
+          oUl.insertBefore(oLi[i],this)
+        })
+      }
+    }
+
+    bindLiEvent()
+
+    function getIndex(dom) {
+      for(let i = 0; i < len; i++) {
+        if(oLi[i] === dom) {
+          return i;
         }
       }
     }
