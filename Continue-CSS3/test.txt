@@ -1,0 +1,27 @@
+justify-content : 控制元素主轴排列方式
+  flex-start
+  flex-end
+  space-between
+  space-around
+  space-evenlt
+  center
+align-items : 控制元素在交叉轴上的排列方式
+  stretch: (默认值) 元素被拉伸以适应容器
+  center
+  flex-start 
+  flex-end
+align-content: 只适用于多行显示的容器,它的作用是当flex容器在交叉轴上有多余的空间时,对元素的对齐处理
+  stretch: 将空间平均分配给元素
+  flex-start
+  flex-end
+  center
+  space-between
+  space-around
+  space-evenly
+align-self: 用于控制单个元素在交叉轴上的排列方式
+  stretch
+  flext-start
+  flex-end
+  center
+flex-grow: 用于将弹性盒子的可用空间,分配给弹性元素.可以使用整数或小数声明
+flex-shrink
